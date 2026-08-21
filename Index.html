@@ -1,0 +1,59 @@
+<style>
+body{
+background-Color : Black;
+color : LimeGreen;
+padding : 20px;
+font-family : sans-serif;
+text-shadow : 0 0 10px LimeGreen;
+}
+button{
+background-Color : Black;
+border : 2px solid LimeGreen;
+border-radius : 20px;
+color : LimeGreen;
+}
+input{
+background-Color : Black;
+border : 2px solid Green;
+color : Green;
+border-radius : 20px;
+}
+select{
+background-Color : Black;
+border : 2px solid Green;
+color : Green;
+} 
+</style>
+<h1>Money Calculator</h1>
+<p>Calculate the money per person</p>
+<select id="Currency">
+<option>€</option>
+<option>£</option>
+<option>$</option>
+<option>₩</option>
+<option>¥</option>
+<option>₽</option>
+<option>₺</option>
+<option>₹</option>
+</select>
+<br><br><input id="People" type="number" placeholder="How many of you are there?">
+<br><br><input id="Money" type="number" placeholder="Total price...">
+<br><br><button onclick="Calculate()">Calculate</button>
+<p id="Result"></p>
+<script>
+function Calculate() {
+let a = document.getElementById('People').value;
+let b = document.getElementById('Money').value;
+if (a === ""|| b === "") {
+alert("Please fill both inputs")
+return;
+} else if (a == 0 || b == 0) {
+alert("This Calculation can't be solved")
+return;
+} 
+let result = b/a;
+let resultreal = result.toFixed(2);
+document.getElementById('Result').innerHTML = resultreal + document.getElementById('Currency').value + " per person"
+}
+</script>
+<footer><h6> © 2026 Anonymous</h6></footer>
